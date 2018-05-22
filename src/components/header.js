@@ -7,18 +7,27 @@ const styles = {
   },
   viewStyling: {
     backgroundColor: 'skyblue',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingTop: 10,
+    shadowColor: '#000',
+    shadowOffset: { height: 2 },
+    shadowOpacity: 0.4,
+    elevation: 1,
+    position: 'relative'
   }
 };
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   
   render() {
     const {styling, viewStyling} = styles;
     return (
       <View style={viewStyling}>      
         <Text style={styling}>
-          Pixabay
+          {this.props.headTitle || 'Pixabay Images'}
         </Text>
       </View>
     );
