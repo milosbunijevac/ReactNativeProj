@@ -26,9 +26,17 @@ class imageList extends React.Component {
   renderList() {
     if (this.props.images.hits) {
       return (
-        <Text>
-        I see the images!
-        </Text>
+        <View>
+          {this.props.images.hits.map((value, index) => {
+            return (
+              <Card 
+                key={value.id}
+                user={value.user}
+                webformatURL={value.webformatURL}
+              />
+            );
+          })}
+        </View>
       );
 
     } else {
