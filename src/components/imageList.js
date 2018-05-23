@@ -24,14 +24,24 @@ class imageList extends React.Component {
   }
 
   renderList() {
-    <Text>
-      Blah
-    </Text>;
+    if (this.props.images.hits) {
+      return (
+        <Text>
+        I see the images!
+        </Text>
+      );
+
+    } else {
+      return (
+        <Text>
+          Loading...
+        </Text>
+      );
+    }
   }
   
   render() {
     const {viewStyling} = styles;
-    console.log('Image totalHits: ', this.props.images.totalHits);
     return (
       <View style={viewStyling}>
         {this.renderList()}

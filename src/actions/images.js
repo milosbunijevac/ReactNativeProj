@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const IMG_URL = 'https://pixabay.com/api/?key=9072083-3436ee56d3a7ce88c188d0678&q=nature';
+export const IMG_URL = 'https://pixabay.com/api/?key=9072083-3436ee56d3a7ce88c188d0678&q=nature&page=1';
 export const GET_IMAGES = 'GET_IMAGES';
 export const GET_IMAGES_FAILURE = 'GET_IMAGES_FAILURE';
 
