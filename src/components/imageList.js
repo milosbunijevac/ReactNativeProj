@@ -3,7 +3,7 @@ import Card from './card';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as images from '../actions/images';
-import {View, Text} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 
 const styles = {
   viewStyling: {
@@ -22,7 +22,7 @@ class imageList extends React.Component {
   renderList() {
     if (this.props.images.hits) {
       return (
-        <View>
+        <ScrollView>
           {this.props.images.hits.map((value, index) => {
             return (
               <Card 
@@ -32,7 +32,7 @@ class imageList extends React.Component {
               />
             );
           })}
-        </View>
+        </ScrollView>
       );
 
     } else {
