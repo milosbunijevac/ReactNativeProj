@@ -19,10 +19,6 @@ class imageList extends React.Component {
     this.renderList = this.renderList.bind(this);
   }
 
-  componentDidMount() {
-    this.props.getImages.getImages();
-  }
-
   renderList() {
     if (this.props.images.hits) {
       return (
@@ -60,7 +56,8 @@ class imageList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    images: state.Images
+    images: state.Images,
+    text: state.TextInput
   };
 };
 

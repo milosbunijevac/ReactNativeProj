@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './src/components/header';
 import ImageList from './src/components/imageList';
-
+import SearchBar from './src/components/searchBar';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
@@ -20,6 +20,7 @@ class App extends React.Component {
       <Provider store={store}>
         <View>
           <Header />
+          <SearchBar />
           <ImageList /> 
         </View>
       </Provider>
