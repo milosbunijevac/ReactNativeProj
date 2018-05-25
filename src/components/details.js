@@ -17,15 +17,17 @@ const styles = {
   imageStyle: {
     padding: 3,
     position: 'relative',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   imgSize: {
-    height: 150,
-    width: 150,
-    justifyContent: 'center'
+    flex: 1,
+    width: 300,
+    height: 200
   },
   textStyle: {
-    textAlign: 'center'
+    textAlign: 'center',
+    paddingTop: 10
   }
 };
 
@@ -39,13 +41,13 @@ class Details extends React.Component {
     return (
       <ScrollView>
         <View style={imageStyle}>
-          <Image style={imgSize} source={{uri: this.props.webformatURL || 'http://www.google.com'}}/>
+          <Image style={imgSize} source={{uri: this.props.navigation.state.params.allProps.webformatURL || 'http://www.google.com'}}/>
         </View>
         <View style={containerStyle}>
           <Text style={textStyle}>
-            <Text> Uploading user: {this.props.user || 'user'} </Text>
-            <Text> Image Tags: {this.props.tags || 'tags'} </Text>
-            <Text> Resolution: {this.props.imageWidth || 'width'} x {this.props.imageHeight || 'height'}</Text>
+            <Text> Uploading user: {this.props.navigation.state.params.allProps.user || 'user'} {'\n'} </Text>
+            <Text> Image Tags: {this.props.navigation.state.params.allProps.tags || 'tags'} {'\n'}</Text>
+            <Text> Resolution: {this.props.navigation.state.params.allProps.imageWidth || 'width'} x {this.props.navigation.state.params.allProps.imageHeight || 'height'} {'\n'}</Text>
           </Text>
         </View>
       </ScrollView>

@@ -37,11 +37,11 @@ class Card extends React.Component {
   render() {
     const {containerStyle, imageStyle, imgSize, textStyle} = styles;
     return (
-      <Touchable feedback="opacity" onPress={() => this.props.navigation.navigate('Details')}>
+      <Touchable feedback="opacity" onPress={() => this.props.navigation.navigate('Details', {allProps: this.props.value})}>
         <View style={containerStyle}>
           <View>
             <Text style={textStyle}>
-              {this.props.user || 'Card User'}
+              {this.props.user}
             </Text>
           </View>
           <View style={imageStyle}>

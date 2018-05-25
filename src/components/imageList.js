@@ -20,13 +20,14 @@ class imageList extends React.Component {
   }
 
   renderList() {
-    if (this.props.images.hits) {
+    if (this.props.images.hits && this.props.images.hits.length > 0) {
       return (
         <ScrollView>
           {this.props.images.hits.map((value, index) => {
             return (
               <Card 
                 key={value.id}
+                value={value}
                 user={value.user}
                 webformatURL={value.webformatURL}
                 navigation={this.props.navigation}
@@ -36,6 +37,12 @@ class imageList extends React.Component {
         </ScrollView>
       );
 
+    } else if (this.props.images.hits && this.props.images.total === 0) {
+      return (
+        <Text>
+          No results found.
+        </Text>
+      );
     } else {
       return (
         <Text>
