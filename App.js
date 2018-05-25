@@ -23,7 +23,7 @@ class App extends React.Component {
         <View style={{ flex: 1 }}>
           <Header />
           <SearchBar />
-          <ImageList /> 
+          <ImageList navigation={this.props.navigation} /> 
         </View>
       </Provider>
     );

@@ -39,13 +39,13 @@ class Details extends React.Component {
     return (
       <ScrollView>
         <View style={imageStyle}>
-          <Image style={imgSize} source={{uri: this.props.webformatURL}}/>
+          <Image style={imgSize} source={{uri: this.props.webformatURL || 'http://www.google.com'}}/>
         </View>
         <View style={containerStyle}>
           <Text style={textStyle}>
-            <Text> Uploading user: {this.props.user} </Text>
-            <Text> Image Tags: {this.props.tags} </Text>
-            <Text> Resolution: {this.props.imageWidth} x {this.props.imageHeight}</Text>
+            <Text> Uploading user: {this.props.user || 'user'} </Text>
+            <Text> Image Tags: {this.props.tags || 'tags'} </Text>
+            <Text> Resolution: {this.props.imageWidth || 'width'} x {this.props.imageHeight || 'height'}</Text>
           </Text>
         </View>
       </ScrollView>

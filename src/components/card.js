@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, Button} from 'react-native';
+import Touchable from '@appandflow/touchable';
 
 const styles = {
   containerStyle: {
@@ -36,19 +37,21 @@ class Card extends React.Component {
   render() {
     const {containerStyle, imageStyle, imgSize, textStyle} = styles;
     return (
-      <View style={containerStyle}>
-        <View>
-          <Text style={textStyle}>
-            {this.props.user || 'Card User'}
-          </Text>
+      <Touchable feedback="opacity" onPress={() => this.props.navigation.navigate('Details')}>
+        <View style={containerStyle}>
+          <View>
+            <Text style={textStyle}>
+              {this.props.user || 'Card User'}
+            </Text>
+          </View>
+          <View style={imageStyle}>
+            <Image 
+              source={{uri: this.props.webformatURL}}
+              style={imgSize} 
+            />
+          </View>
         </View>
-        <View style={imageStyle}>
-          <Image 
-            source={{uri: this.props.webformatURL}}
-            style={imgSize} 
-          />
-        </View>
-      </View>
+      </Touchable>
     );
   }
 }

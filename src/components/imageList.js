@@ -29,6 +29,7 @@ class imageList extends React.Component {
                 key={value.id}
                 user={value.user}
                 webformatURL={value.webformatURL}
+                navigation={this.props.navigation}
               />
             );
           })}
