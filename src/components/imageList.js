@@ -38,7 +38,7 @@ class imageList extends React.Component {
     } else {
       return (
         <Text>
-          Loading...
+          
         </Text>
       );
     }
