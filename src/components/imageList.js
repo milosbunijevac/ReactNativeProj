@@ -3,7 +3,7 @@ import Card from './card';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as images from '../actions/images';
-import {View, Text, ScrollView} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import Pagination, {Icon, Dot} from 'react-native-pagination';
 
 const styles = {
@@ -23,19 +23,21 @@ class imageList extends React.Component {
   renderList() {
     if (this.props.images.hits && this.props.images.hits.length > 0) {
       return (
-        <ScrollView>
-          {this.props.images.hits.map((value, index) => {
+        <FlatList
+          data={this.props.images.hits}
+          keyExtractor={(x, i) => i.toString()}
+          renderItem={ (card) => {
             return (
               <Card 
-                key={value.id}
-                value={value}
-                user={value.user}
-                webformatURL={value.webformatURL}
+                key={card.item.id}
+                allProps={card.item}
+                user={card.item.user}
+                webformatURL={card.item.webformatURL}
                 navigation={this.props.navigation}
               />
             );
-          })}
-        </ScrollView>
+          }}
+        />
       );
 
     } else if (this.props.images.hits && this.props.images.total === 0) {
