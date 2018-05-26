@@ -8,7 +8,7 @@ const styles = {
   viewStyling: {
     backgroundColor: 'skyblue',
     alignItems: 'center',
-    paddingTop: 10,
+    paddingTop: 5,
     shadowColor: '#000',
     shadowOffset: { height: 2 },
     shadowOpacity: 0.4,

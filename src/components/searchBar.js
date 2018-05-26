@@ -24,7 +24,7 @@ class searchBar extends React.Component {
   }
 
   submitSearch() {
-    this.props.getImages.getImages(this.props.textInput);
+    this.props.getImages.getInitialImages(this.props.textInput);
   }
 
   inputChange(text) {

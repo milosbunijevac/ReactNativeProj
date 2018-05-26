@@ -18,14 +18,22 @@ class imageList extends React.Component {
   constructor(props) {
     super(props);
     this.renderList = this.renderList.bind(this);
+    this.handleEnd = this.handleEnd.bind(this);
+  }
+
+  handleEnd() {
+    console.log('The end was reached.');
+    this.props.getImages.getMoreImages(this.props.text, this.props.images.page);
   }
 
   renderList() {
-    if (this.props.images.hits && this.props.images.hits.length > 0) {
+    if (this.props.images.data && this.props.images.data.length > 0) {
       return (
         <FlatList
-          data={this.props.images.hits}
+          data={this.props.images.data}
           keyExtractor={(x, i) => i.toString()}
+          onEndReached={this.handleEnd}
+          onEndReachedThreshold={0}
           renderItem={ (card) => {
             return (
               <Card 
@@ -40,10 +48,10 @@ class imageList extends React.Component {
         />
       );
 
-    } else if (this.props.images.hits && this.props.images.total === 0) {
+    } else if (this.props.images.data && this.props.images.data.length === 0) {
       return (
         <Text>
-          No results found.
+          If results are found, they will be displayed here.
         </Text>
       );
     } else {
