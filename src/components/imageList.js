@@ -22,7 +22,6 @@ class imageList extends React.Component {
   }
 
   handleEnd() {
-    console.log('The end was reached.');
     this.props.getImages.getMoreImages(this.props.text, this.props.images.page);
   }
 
