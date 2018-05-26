@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as images from '../actions/images';
 import {View, Text, ScrollView} from 'react-native';
+import Pagination, {Icon, Dot} from 'react-native-pagination';
 
 const styles = {
   viewStyling: {

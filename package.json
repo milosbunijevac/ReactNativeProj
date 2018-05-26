@@ -26,6 +26,7 @@
     "react": "16.3.1",
     "react-devtools": "^3.2.3",
     "react-native": "~0.55.2",
+    "react-native-pagination": "^1.2.8",
     "react-navigation": "^2.0.2",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
