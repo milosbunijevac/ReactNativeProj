@@ -38,16 +38,17 @@ class Details extends React.Component {
 
   render() {
     const {containerStyle, imageStyle, imgSize, textStyle} = styles;
+    const {webformatURL, user, tags, imageWidth, imageHeight} = this.props.navigation.state.params.allProps;
     return (
       <ScrollView>
         <View style={imageStyle}>
-          <Image style={imgSize} source={{uri: this.props.navigation.state.params.allProps.webformatURL || 'http://www.google.com'}}/>
+          <Image style={imgSize} source={{uri: webformatURL || 'http://www.google.com'}}/>
         </View>
         <View style={containerStyle}>
           <Text style={textStyle}>
-            <Text> Uploading user: {this.props.navigation.state.params.allProps.user || 'user'} {'\n'} </Text>
-            <Text> Image Tags: {this.props.navigation.state.params.allProps.tags || 'tags'} {'\n'}</Text>
-            <Text> Resolution: {this.props.navigation.state.params.allProps.imageWidth || 'width'} x {this.props.navigation.state.params.allProps.imageHeight || 'height'} {'\n'}</Text>
+            <Text> Uploading user: {user || 'user'} {'\n'} </Text>
+            <Text> Image Tags: {tags || 'tags'} {'\n'}</Text>
+            <Text> Resolution: {imageWidth || 'width'} x {imageHeight || 'height'} {'\n'}</Text>
           </Text>
         </View>
       </ScrollView>
